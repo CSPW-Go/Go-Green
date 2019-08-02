@@ -1,18 +1,37 @@
-import React from 'react';
-import Recycle from '../components/Recycle';
-import styled from 'styled-components'
+import React from "react";
+import Recycle from "../components/Recycle";
+import styled from "styled-components";
+import DisplayTopFive from "./DisplayTopFive";
 
 type material = string;
 const MainContainer = (props: any) => {
   return (
     <MainContainerStyled>
       Recycling Categories:
-      <Recycle materialInfo={props.type.glass} material="Glass" handleAdd={props.handleAdd} 
-              handleDelete={props.handleDelete} handlePayment={props.handlePayment}/>
-      <Recycle materialInfo={props.type.metal} material="Metal" handleAdd={props.handleAdd} 
-              handleDelete={props.handleDelete} handlePayment={props.handlePayment}/>
-      <Recycle materialInfo={props.type.plastic} material="Plastic" handleAdd={props.handleAdd} 
-              handleDelete={props.handleDelete} handlePayment={props.handlePayment}/>
+      <Recycle
+        materialInfo={props.type.glass}
+        material="Glass"
+        handleAdd={props.handleAdd}
+        handleDelete={props.handleDelete}
+        handlePayment={props.handlePayment}
+      />
+      <Recycle
+        materialInfo={props.type.metal}
+        material="Metal"
+        handleAdd={props.handleAdd}
+        handleDelete={props.handleDelete}
+        handlePayment={props.handlePayment}
+      />
+      <Recycle
+        materialInfo={props.type.plastic}
+        material="Plastic"
+        handleAdd={props.handleAdd}
+        handleDelete={props.handleDelete}
+        handlePayment={props.handlePayment}
+      />
+      <div>
+        <DisplayTopFive />
+      </div>
     </MainContainerStyled>
   );
 };
@@ -20,5 +39,5 @@ const MainContainer = (props: any) => {
 export default MainContainer;
 
 const MainContainerStyled = styled.div`
-  border: 2px solid red
-`
+  border: 2px solid red;
+`;

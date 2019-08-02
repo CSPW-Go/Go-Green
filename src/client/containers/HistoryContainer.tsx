@@ -22,7 +22,7 @@ const HistoryContainer = (props: any) => {
       headers: {
         'Content-Type': 'application/json',
         username: props.username
-      }
+      },
     })
     .then(res => res.json())
     .then(data => {
