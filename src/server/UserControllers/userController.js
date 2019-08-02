@@ -72,7 +72,7 @@ userController.addToHistory = (req, res, next) => {
 };
 
 userController.yelp = (req, res, next) => {
-  const zip = req.body.zipCode;
+  const zip = req.headers.zip;
   axios
     .get("https://api.yelp.com/v3/businesses/search?term=basketball courts&", {
       headers: {

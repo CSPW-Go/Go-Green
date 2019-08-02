@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-const axios = require("axios");
 
-const DisplayTopFive = (props: any) => {
+const DisplayTopFive = () => {
   const [zipCode, changeZip] = useState(0);
   const [topFive, changeTopFive] = useState(null);
 
@@ -12,12 +11,12 @@ const DisplayTopFive = (props: any) => {
 
   // function to fetch top recycling centern
   const giveMeTopFive = () => {
-    console.log(zipCode);
     event.preventDefault();
-    fetch("http://localhost:5000/yelp", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ zipCode })
+    fetch("/yelp", {
+      headers: {
+        "Content-Type": "application/json",
+        zip: zipCode
+      }
     })
       .then(res => res.json())
       .then(res => console.log(res))
